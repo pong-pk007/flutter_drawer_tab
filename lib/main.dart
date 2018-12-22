@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
-import './pages/new_page.dart';
-import './pages/new_page_tab.dart';
+import './pages/new_page_one.dart';
+import './pages/new_page_two.dart';
+import './pages/new_page_three.dart';
+
+import './pages/new_page_tab_one.dart';
+import './pages/new_page_tab_two.dart';
+import './pages/new_page_tab_three.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -18,8 +23,9 @@ class MyApp extends StatelessWidget {
       ),
       home: MyHomePage(),
       routes: <String, WidgetBuilder> {
-          "/a": (BuildContext context) => NewPage("Page One"),
-          "/b": (BuildContext context) => NewPage("Page Two"),
+          "/a": (BuildContext context) => NewPageOne("Page One"),
+          "/b": (BuildContext context) => NewPageTwo("Page Two"),
+          "/c": (BuildContext context) => NewPageThree("Page Three"),
         },
     );
   }
@@ -63,15 +69,15 @@ TabController tabController;
           tabs: <Widget>[
             Tab(
               icon: Icon(Icons.face),
-              text: "test1",
+              text: "Snack Bar",
             ),
             Tab(
               icon: Icon(Icons.favorite),
-              text: "test2",
+              text: "Dialog",
             ),
             Tab(
               icon: Icon(Icons.filter),
-              text: "test3",
+              text: "Step",
             )
           ],
         ),
@@ -125,9 +131,9 @@ TabController tabController;
         ),
       ),
       body: TabBarView(children: <Widget>[
-        NewPageTap("Tab 1"),
-        NewPageTap("Tab 2"),
-        NewPageTap("Tab 3")
+        NewPageTapOne("Tab 1"),
+        NewPageTapTwo("Tab 2"),
+        NewPageTapThree("Tab 3")
       ],
       controller: tabController,
       ),
